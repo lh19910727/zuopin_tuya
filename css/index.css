@@ -2,6 +2,9 @@
   margin: 0;
   padding: 0;
 }
+body{
+	overflow-x: hidden;
+}
 .clearFix:after {
   content: '';
   clear: both;
@@ -9,8 +12,11 @@
 }
 #content {
   width: 12.88rem;
-  padding: 0 0.76rem;
-  margin: 0.4rem auto;
+  padding:0.4rem 0;
+  margin-left: -6.44rem;
+  position: absolute;
+  left:50%;
+  top:0;
 }
 #drawPic {
   background: url(../img/tuyaBg.jpg) no-repeat;
@@ -157,10 +163,9 @@ ul {
 }
 #list {
   width: 12.88rem;
-  padding: 0 0.76rem;
-  margin: 0.4rem auto;
+  margin-left: -6.44rem;
   position: absolute;
-  left: 1500px;
+  left: 500%;
   top:0;
 }
 #list li {
