@@ -107,12 +107,14 @@ window.onload = function() {
 		var arrUrl=[];
 	}
 	//提交数据
-	submit.on('touchstart',function(){
+	submit.on('click',function(){
 		var urlData=drawPic.toDataURL();
 		arrUrl.push(urlData);
 		setsessionStorage('urldata', arrUrl);
 		if(arrUrl.length===0)return;
-		window.location.href='imgList.html';
+//		window.location.href='imgList.html';
+		$('#list').animate({'left':0},500);
+		$('#content').get(0).style.display='none';
 	})
 
 }
