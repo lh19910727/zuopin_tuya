@@ -1,0 +1,154 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.clearFix:after {
+  content: '';
+  clear: both;
+  display: block;
+}
+#content {
+  width: 12.88rem;
+  padding: 0 0.76rem;
+  margin: 0.4rem auto;
+}
+#drawPic {
+  background: url(../img/tuyaBg.jpg) no-repeat;
+  background-size: 100% 100%;
+  margin-bottom: 0.6rem;
+}
+#top {
+  width: 12.88rem;
+  height: 1.6rem;
+  font-size: 0.48rem;
+  font-family: "微软雅黑";
+  color: #9a9a9a ;
+  text-align: center;
+}
+#top div {
+  float: left;
+  border: 0.04rem solid #9a9a9a;
+  line-height: 1.6rem;
+}
+#strokes {
+  width: 6.8rem;
+  height: 100%;
+}
+#revoke {
+  margin: 0 0.28rem;
+}
+#revoke,
+#cancle {
+  width: 2.64rem;
+  height: 100%;
+}
+#strokes em {
+  font-style: normal;
+  float: left;
+  margin: 0 0.4rem 0 0.6rem;
+}
+#strokes span {
+  float: left;
+  margin-right: 0.78rem;
+  border: 0.04rem solid #9a9a9a;
+  border-radius: 50%;
+}
+#strokes span.active {
+  background: gray;
+}
+#thin {
+  width: 0.32rem;
+  height: 0.32rem;
+  margin-top: 0.6rem;
+}
+#medium {
+  width: 0.5rem;
+  height: 0.5rem;
+  margin-top: 0.4rem;
+}
+#thick {
+  width: 0.8rem;
+  height: 0.8rem;
+  margin-top: 0.24rem;
+}
+#color {
+  margin: 0.6rem 0;
+  width: 12.88rem;
+  height: 1.6rem;
+  font-size: 0.48rem;
+  font-family: "微软雅黑";
+  color: #9a9a9a ;
+  text-align: center;
+  border: 0.04rem solid #9a9a9a;
+  line-height: 1.6rem;
+}
+#color em {
+  font-style: normal;
+  float: left;
+  margin: 0 1rem 0 0.66rem;
+}
+#color span {
+  float: left;
+  position: relative;
+  margin-right: 0.48rem;
+  margin-top: 0.28rem;
+  width: 1.04rem;
+  height: 1.04rem;
+  border-radius: 0.2rem;
+  border: 0.04rem solid #9a9a9a;
+}
+.checked:before {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: url(../img/check.png) no-repeat;
+  background-position: 0.16rem 0.28rem;
+  background-size: 60% 60%;
+}
+#color span:nth-of-type(1) {
+  background: white;
+}
+#color span:nth-of-type(2) {
+  background: #fb9701 ;
+}
+#color span:nth-of-type(3) {
+  background: #21a8e7 ;
+}
+#color span:nth-of-type(4) {
+  background: #22ffcc ;
+}
+#color span:nth-of-type(5) {
+  background: #2ecc71;
+}
+#color span:nth-of-type(6) {
+  background: #222222;
+}
+#bottom {
+  width: 100%;
+  height: 2rem;
+}
+#bottom a {
+  width: 3.9rem;
+  padding-left: 2.1rem;
+  height: 2rem;
+  border-radius: 0.2rem;
+  float: left;
+  font-size: 0.48rem;
+  font-family: "微软雅黑";
+  color: #fff;
+  line-height: 2rem;
+  text-decoration: none;
+}
+#bottom a:nth-of-type(1) {
+  background: #21a8e7 url(../img/eye.jpg) no-repeat 0.54rem 0.76rem;
+  background-size: 0.6rem 0.44rem;
+}
+#bottom a:nth-of-type(2) {
+  background: #2ecc71 url(../img/yu.jpg) no-repeat 0.54rem 0.76rem;
+  background-size: 0.6rem 0.44rem;
+}
+#submit {
+  margin-left: 0.88rem;
+}

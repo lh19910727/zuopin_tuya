@@ -1,0 +1,24 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+ul {
+  list-style: none;
+}
+#list {
+  width: 12.88rem;
+  padding: 0 0.76rem;
+  margin: 0.4rem auto;
+}
+#list li {
+  float: left;
+  width: 6rem;
+  height: 6rem;
+  margin: 0.22rem;
+  background: url(../img/tuyaBg.jpg) no-repeat;
+  background-size: 100% 100%;
+}
+#list li img {
+  width: 100%;
+  height: 100%;
+}
