@@ -6,8 +6,8 @@ window.onload = function() {
 	var arrnthin=[8,18,28];
 	for(var i=0;i<spans.length;i++){
 		spans[i].index=i;
-//		spans[i].ontouchstart=function(){
-	spans[i].onclick=function(){
+		spans[i].ontouchstart=function(){
+//	spans[i].onclick=function(){
 			for(var i=0;i<spans.length;i++){
 				spans[i].className='';
 			}
@@ -22,8 +22,8 @@ window.onload = function() {
 	var arrcolors=['white','#fb9701','#21a8e7','#22ffcc','#2ecc71','#222222'];
 	for(var i=0;i<aspan.length;i++){
 		aspan[i].index=i;
-//		aspan[i].ontouchstart=function(){
-	aspan[i].onclick=function(){
+		aspan[i].ontouchstart=function(){
+//	aspan[i].onclick=function(){
 			for(var i=0;i<aspan.length;i++){
 				aspan[i].className='';
 			}
@@ -45,14 +45,14 @@ window.onload = function() {
 	var context=drawPic.getContext('2d');
 	var arr=[];
 	//手指按下
-	drawPic.onmousedown=function(ev){
-//	drawPic.ontouchstart=function(ev){
+//	drawPic.onmousedown=function(ev){
+	drawPic.ontouchstart=function(ev){
 //		var t = document.body.scrollTop||document.documentElement.scrollTop;
 		//存储初始位置
-//		var Left=ev.touches[0].clientX-drawPic.getBoundingClientRect().left;
-//		var Top=ev.touches[0].clientY-drawPic.getBoundingClientRect().top;
-		var Left=ev.clientX-drawPic.getBoundingClientRect().left;
-		var Top=ev.clientY-drawPic.getBoundingClientRect().top;
+		var Left=ev.touches[0].clientX-drawPic.getBoundingClientRect().left;
+		var Top=ev.touches[0].clientY-drawPic.getBoundingClientRect().top;
+//		var Left=ev.clientX-drawPic.getBoundingClientRect().left;
+//		var Top=ev.clientY-drawPic.getBoundingClientRect().top;
 		//设置线条末端的形状为圆头；
 		context.lineCap='round';
 		//设置线条的颜色；
@@ -63,30 +63,31 @@ window.onload = function() {
 		context.beginPath();
 		context.moveTo(Left,Top);
 		//手指移动
-		drawPic.onmousemove=function(ev){
-//		drawPic.ontouchmove=function(ev){
-//			var L=ev.touches[0].clientX-drawPic.getBoundingClientRect().left;
-//			var T=ev.touches[0].clientY-drawPic.getBoundingClientRect().top;
-			var L=ev.clientX-drawPic.getBoundingClientRect().left;
-			var T=ev.clientY-drawPic.getBoundingClientRect().top;
+//		drawPic.onmousemove=function(ev){
+		drawPic.ontouchmove=function(ev){
+			var L=ev.touches[0].clientX-drawPic.getBoundingClientRect().left;
+			var T=ev.touches[0].clientY-drawPic.getBoundingClientRect().top;
+//			var L=ev.clientX-drawPic.getBoundingClientRect().left;
+//			var T=ev.clientY-drawPic.getBoundingClientRect().top;
 			context.lineTo(L,T);
 			context.stroke();
 			ev.preventDefault();
 
 		}
 		//手指抬起
-		document.onmouseup=function(){
-//		document.ontouchend=function(){
+//		document.onmouseup=function(){
+		document.ontouchend=function(){
 			context.closePath();
-			drawPic.onmousemove=document.onmouseup=null;
+//			drawPic.onmousemove=document.onmouseup=null;
+			drawPic.ontouchmove=document.ontouchend=null;
 			var imgData=context.getImageData(0,0,canvasWidth,canvasWidth);
 			arr.push(imgData);
 		}
 	}
 	//点击撤销
 	var revoke=$('#revoke').get(0);
-	revoke.addEventListener('click',function(){
-//	revoke.addEventListener('touchstart',function(){
+//	revoke.addEventListener('click',function(){
+	revoke.addEventListener('touchstart',function(){
 //		console.log(arr.length)
 		if(arr.length===0){
 			return;
@@ -102,8 +103,8 @@ window.onload = function() {
 	})
 	//清除画布
 	var cancle=$('#cancle');
-	cancle.on('click',function(){
-//	cancle.on('touchstart',function(){
+//	cancle.on('click',function(){
+	cancle.on('touchstart',function(){
 		if(arr.length===0) return;
 		context.clearRect(0,0,canvasWidth,canvasWidth);
 		arr=[];
@@ -117,7 +118,7 @@ window.onload = function() {
 		var arrUrl=[];
 	}
 	//提交数据
-	submit.on('click',function(){
+	submit.on('touchstart',function(){
 		var left=(clientWidth-$('#list').width())/2;
 		console.log(clientWidth);
 		console.log($('#list').width())
